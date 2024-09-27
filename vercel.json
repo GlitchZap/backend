@@ -1,11 +1,18 @@
 {
-  "build": {
-    "env": {
-      "PYTHON_VERSION": "3.x"  // Replace with the version you need, e.g., "3.9" or "3.10"
-    },
-    "commands": {
-      "install": "pip install -r requirements.txt",
-      "build": "python main.py"
+  "version": 2,
+  "builds": [
+    {
+      "src": "main.py",
+      "use": "@vercel/python"
     }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "main.py"
+    }
+  ],
+  "env": {
+    "GOOGLE_API_KEY": "AIzaSyAgxiRhij1ZJZmpHSSIBh1wmDmWfiU7k-Q"
   }
 }
